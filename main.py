@@ -1,7 +1,8 @@
 from observations import create_observation, print_observations
-from database import get_observations, add_observation
+from database import get_observations, add_observation, initialise_database
+initialise_database()
 
-print("Welcome to fauna!")
+print("Welcome to Fauna!")
 
 another = True
 conf_accepted = False
