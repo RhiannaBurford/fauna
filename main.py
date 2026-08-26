@@ -4,7 +4,6 @@ from database import get_observations, add_observation
 print("Welcome to fauna!")
 
 another = True
-#observations = []
 conf_accepted = False
 
 while another:
@@ -25,10 +24,8 @@ while another:
 
 
     observation = create_observation(species, confidence, date, location, image)
-    obs_id = add_observation(observation)
-    print(obs_id)
+    obs_id = add_observation(observation) # think i can delete the obs_id returned bit
 
-    #observations.append(observation)
 
     # Asking user if they want to input another observation
     enquiry = input("Observation created!\nAdd another observation? ")
