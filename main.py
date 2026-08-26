@@ -1,13 +1,15 @@
 from observations import create_observation, print_observations
+from database import get_observations, add_observation
 
 print("Welcome to fauna!")
 
 another = True
-observations = []
+#observations = []
 conf_accepted = False
 obs_id = 1
 
 while another:
+    # Gathering user input
     species = input("Enter a species: ")
     while not conf_accepted:
         try:
@@ -21,16 +23,22 @@ while another:
     date = input("Enter a date: ")
     location = input("Enter a location: ")
     image = input("Enter the image: ")
-    observation = create_observation(species, confidence, date, location, image, id)
+
+
+    observation = create_observation(species, confidence, date, location, image, obs_id)
+    add_observation(observation)
     obs_id = obs_id + 1
-    observations.append(observation)
+    #observations.append(observation)
+
+    # Asking user if they want to input another observation
     enquiry = input("Observation created!\nAdd another observation? ")
     if enquiry.lower() == "no" or enquiry.lower() == "n":
         another = False
 
+
 view = input("Would you like to view your observations? (y/n) ")
 if view.lower() == "y":
-    print_observations(observations)
+    print_observations(get_observations())
 
 
 
