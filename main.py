@@ -6,7 +6,6 @@ print("Welcome to fauna!")
 another = True
 #observations = []
 conf_accepted = False
-obs_id = 1
 
 while another:
     # Gathering user input
@@ -25,9 +24,10 @@ while another:
     image = input("Enter the image: ")
 
 
-    observation = create_observation(species, confidence, date, location, image, obs_id)
-    add_observation(observation)
-    obs_id = obs_id + 1
+    observation = create_observation(species, confidence, date, location, image)
+    obs_id = add_observation(observation)
+    print(obs_id)
+
     #observations.append(observation)
 
     # Asking user if they want to input another observation

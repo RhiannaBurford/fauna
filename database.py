@@ -11,6 +11,8 @@ def add_observation(observation): # The INSERT operation
                                 observation["image"]))
     # ? are parameterised placeholders
     connection.commit() # commits the newly inserted row to the SQLite database file so that it persists on the disk
+    return cursor.lastrowid
+
 
 connection = sqlite3.connect("fauna.db")
 connection.row_factory = sqlite3.Row
