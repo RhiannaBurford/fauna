@@ -25,8 +25,7 @@ while another:
 
 
     observation = create_observation(species, confidence, date, location, image)
-    obs_id = add_observation(observation) # think i can delete the obs_id returned bit
-
+    row_id = add_observation(observation) # think i can delete the obs_id returned bit
 
     # Asking user if they want to input another observation
     enquiry = input("Observation created!\nAdd another observation? ")

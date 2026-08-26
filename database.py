@@ -5,6 +5,7 @@ def get_observations(): # The SELECT operation
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM observations")
     observations = cursor.fetchall()
+    print(dict(observations[0]))
     connection.close()
     return observations
 

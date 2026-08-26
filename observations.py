@@ -9,5 +9,5 @@ def create_observation(species, confidence, date, location, image):
 def print_observations(observations):
     print("Your observations:\n\n")
     for obs in observations:
-        print("ID:", obs["obs_id"], "\nSpecies:", obs["species"], f'\nConfidence: {obs["confidence"]:.0f}%')
+        print("Species:", obs["species"], f'\nConfidence: {obs["confidence"]:.0f}%')
         print("Date:", obs["date"], "\nLocation:", obs["location"], "\nImage:", obs["image"], "\n")
